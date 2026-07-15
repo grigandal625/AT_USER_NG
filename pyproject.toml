@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "at-user-ng"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^6.0.7"
+uvicorn = "^0.51.0"
+psycopg2-binary = "^2.9.12"
+psycopg2 = "^2.9.12"
+whitenoise = "^6.12.0"
+python-dotenv = "^1.2.2"
+drf-spectacular = "^0.30.0"
+django-cors-headers = "^4.9.0"
+at-queue = {git = "https://github.com/grigandal625/AT_QUEUE.git", rev = "pydantic-type-check"}
+adrf = {git = "https://github.com/grigandal625/adrf.git", rev = "main"}
+django-filter = "^26.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
