@@ -15,7 +15,7 @@ whitenoise = "^6.12.0"
 python-dotenv = "^1.2.2"
 drf-spectacular = "^0.30.0"
 django-cors-headers = "^4.9.0"
-at-queue = {git = "https://github.com/grigandal625/AT_QUEUE.git", rev = "pydantic-type-check"}
+at-queue = {git = "https://github.com/grigandal625/AT_QUEUE.git", rev = "master"}
 adrf = {git = "https://github.com/grigandal625/adrf.git", rev = "main"}
 django-filter = "^26.1"
 
