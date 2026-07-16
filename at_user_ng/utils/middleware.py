@@ -6,7 +6,7 @@ from django.utils.decorators import sync_and_async_middleware
 def initialization_check_middleware(get_response):
     async def async_middleware(request):
         # Проверяем наличие scope и инициализированных навыков
-        if not hasattr(request, "scope") or not request.scope.get("at_user"):
+        if not hasattr(request, "scope") or not request.scope.get("components"):
             response = JsonResponse(
                 {"detail": "Service Unavailable"}, status=503)
 
