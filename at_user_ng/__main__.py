@@ -76,6 +76,9 @@ async def main_with_django():
         else:
             # Обработка HTTP-запросов через Django
             scope["at_user"] = at_user
+            scope["components"] = {
+                "at_user": at_user
+            }
             await django_application(scope, receive, send)
 
     # Конфигурация и запуск сервера Uvicorn
