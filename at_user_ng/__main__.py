@@ -9,11 +9,10 @@ from uvicorn import Server
 
 from at_user_ng.absolute.django_init import django_application
 from at_user_ng.absolute.django_init import get_args
-from at_user_ng.core.component import ATUser
+from at_user_ng.core.component import AuthWorker
 
 
 def get_at_user():
-    """Инициализация и возврат навыков (KB и IM)."""
     args = get_args()
     server_host = args.pop("server_host", "localhost")
     server_port = args.pop("server_port", 8000)
@@ -29,8 +28,8 @@ def get_at_user():
     except PermissionError:
         pass
 
-    # Инициализация навыков
-    at_user = ATUser(connection_parameters=connection_parameters)
+    # Инициализация 
+    at_user = AuthWorker(connection_parameters=connection_parameters)
 
     args['server_host'] = server_host
     args['server_port'] = server_port
@@ -39,13 +38,13 @@ def get_at_user():
 
 
 async def main_with_django():
-    """Основная функция для запуска Django и навыков."""
+    """Основная функция для запуска Django."""
     at_user, args = get_at_user()
     server_host = args.pop("server_host", "localhost")
     server_port = args.pop("server_port", 8000)
 
     async def lifespan(app):
-        """Пользовательский lifespan для управления жизненным циклом навыков."""
+        """Пользовательский lifespan для управления жизненным циклом"""
         # Инициализация и регистрация навыков
         logging.basicConfig(level=logging.INFO)
 

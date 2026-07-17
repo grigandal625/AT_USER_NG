@@ -10,7 +10,7 @@ from at_user_ng.core.models import UserData
 User = get_user_model()
 
 
-class ATUser(ATComponent):
+class AuthWorker(ATComponent):
 
     @component_method
     async def verify_token(self, token: str) -> int:
