@@ -141,4 +141,3 @@ def get_args() -> dict:
             os.environ[env_name] = str(value)
 
     return args
-    return vars(args)
