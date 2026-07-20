@@ -10,10 +10,14 @@ from uvicorn import Server
 from at_user_ng.absolute.django_init import django_application
 from at_user_ng.absolute.django_init import get_args
 from at_user_ng.core.component import AuthWorker
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def get_at_user():
     args = get_args()
+    logger.info('ENV DB ENGINE: %s', os.getenv("DB_ENGINE"))
     server_host = args.pop("server_host", "localhost")
     server_port = args.pop("server_port", 8000)
     connection_parameters = ConnectionParameters(**args)

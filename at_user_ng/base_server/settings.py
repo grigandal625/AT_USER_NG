@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+from asyncio.log import logger
 import os
 from pathlib import Path
 
@@ -99,6 +100,8 @@ if not sqlite_db_name.is_absolute():
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_EXPOSE_HEADERS = ['*']
+
+logger.info('ENV DB ENGINE: %s', os.getenv("DB_ENGINE"))
 
 
 SQLITE_CONFIG = {

@@ -11,6 +11,8 @@ settings_module = get_django_settings_module()
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
 django.setup()
 
+args = get_args()
+
 django_application = get_asgi_application()
 
 __all__ = ["django_application", "get_args"]
