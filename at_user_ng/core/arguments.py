@@ -23,6 +23,11 @@ def get_args() -> dict:
 
     # Database
     parser.add_argument(
+        "--db_engine",
+        help="Database host",
+        default=os.getenv("DB_ENGINE", "postgres"),
+    )
+    parser.add_argument(
         "--db_host",
         help="Database host",
         default=os.getenv("DB_HOST", "localhost"),
