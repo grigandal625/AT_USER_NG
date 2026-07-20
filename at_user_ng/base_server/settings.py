@@ -118,7 +118,7 @@ POSTGRES_CONFIG = {
     "PORT": os.getenv("DB_PORT", "5432"),
 }
 
-db_engine = os.getenv("DB_ENGINE")
+db_engine = os.getenv("DB_ENGINE", 'postgres')
 
 default_db = {"postgres": POSTGRES_CONFIG, "sqlite": SQLITE_CONFIG}[db_engine]
 
