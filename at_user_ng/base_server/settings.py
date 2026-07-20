@@ -101,7 +101,7 @@ if not sqlite_db_name.is_absolute():
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_EXPOSE_HEADERS = ['*']
 
-logger.info('ENV DB ENGINE: %s', os.getenv("DB_ENGINE"))
+logger.info('ENV DB ENGINE: %s', os.getenv("DB_ENGINE", 'postgres'))
 
 
 SQLITE_CONFIG = {
