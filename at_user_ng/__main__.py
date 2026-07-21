@@ -19,11 +19,12 @@ logger = logging.getLogger(__name__)
 def get_at_user():
     args = get_args()
     logger.info('ARGS IN MAIN', args)
+    print('ARGS IN MAIN', args)
     server_host = args.pop("server_host", "localhost")
     server_port = args.pop("server_port", 8000)
     connection_parameters = ConnectionParameters(**args)
 
-    logger.info('AMPQ ARGS', connection_parameters.connecion_kwargs)
+    print('AMPQ ARGS', connection_parameters.connecion_kwargs)
 
     # Создание PID-файла (опционально)
     try:
