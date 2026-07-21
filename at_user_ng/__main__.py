@@ -17,10 +17,12 @@ logger = logging.getLogger(__name__)
 
 def get_at_user():
     args = get_args()
-    logger.info('ENV DB ENGINE: %s', os.getenv("DB_ENGINE"))
+    logger.info('ARGS IN MAIN', args)
     server_host = args.pop("server_host", "localhost")
     server_port = args.pop("server_port", 8000)
     connection_parameters = ConnectionParameters(**args)
+
+    logger.info('AMPQ ARGS', connection_parameters.connecion_kwargs)
 
     # Создание PID-файла (опционально)
     try:
@@ -49,7 +51,6 @@ async def main_with_django():
 
     async def lifespan(app):
         """Пользовательский lifespan для управления жизненным циклом"""
-        # Инициализация и регистрация навыков
         logging.basicConfig(level=logging.INFO)
 
         await at_user.initialize()
