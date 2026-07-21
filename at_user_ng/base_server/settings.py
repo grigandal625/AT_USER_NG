@@ -15,11 +15,15 @@ from pathlib import Path
 
 import dotenv
 
+from at_user_ng.core.arguments import get_args
+
 dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 CWD = Path(os.getcwd()).resolve()
+
+args = get_args()
 
 
 # Quick-start development settings - unsuitable for production
