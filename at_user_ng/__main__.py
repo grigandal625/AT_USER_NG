@@ -11,6 +11,7 @@ from at_user_ng.absolute.django_init import django_application
 from at_user_ng.absolute.django_init import get_args
 from at_user_ng.core.component import AuthWorker
 import logging
+logging.basicConfig(level=logging.INFO)
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +52,6 @@ async def main_with_django():
 
     async def lifespan(app):
         """Пользовательский lifespan для управления жизненным циклом"""
-        logging.basicConfig(level=logging.INFO)
 
         await at_user.initialize()
         await at_user.register()
