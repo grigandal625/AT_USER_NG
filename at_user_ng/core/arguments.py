@@ -130,6 +130,7 @@ def get_args() -> dict:
         "db_name": "DB_NAME",
         "db_user": "DB_USER",
         "db_pass": "DB_PASS",
+        "db_engine": "DB_ENGINE",
         "host": "RABBITMQ_HOST",
         "port": "RABBITMQ_PORT",
         "login": "RABBITMQ_LOGIN",
